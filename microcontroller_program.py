@@ -1,28 +1,26 @@
-t = int(input()) # no.of test cases
-res = []
-for j in range(t):
-	c = True
-	a = 0
-	n = int(input()) # no.of inputs
-	freq  = input().split(' ')
-	l = []
-	for num in map(int, freq):
-		if (a==n):
-			break
-		l.append(num)
-		a+=1
-	
-	while c:
-		for i in range(n):
-			if len(l) <= n:
-				if l.count(l[i]) >= 2:
-					print(l[i])
-					c = False
-					break
-			nxt = l[i] + l[len(l)-n]
-			if nxt in l:
-				print(nxt)
-				c = False
-				break
-			l.append(nxt)
-		
+from fractions import gcd
+lcm = lambda a, b: (a*b)//gcd(a,b)
+
+
+t = int(input())
+
+while t:
+	min = 10**5
+	no = int(input())
+	n = []	
+	"""
+	n = input().split(' ')
+	n = list(map(int, n))
+	"""
+	for i in range(no):
+		n.append(int(input()))
+	for i in range(len(n)):
+		for j in range(i+1, len(n)):
+			if(n[j]>=min):
+				continue
+			x = lcm(n[i], n[j])
+			if(x<min):
+				min = x
+
+	print(min)
+	t-=1

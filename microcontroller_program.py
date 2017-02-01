@@ -8,7 +8,8 @@ while t:
 	min = 10**5
 	no = int(input())
 	n = input().split(' ')
-	n = list(map(int, n))
+	n = list(map(int, n))[0:no]
+	print(n)
 	for i in range(len(n)):
 		for j in range(i+1, len(n)):
 			if(n[j]>=min):

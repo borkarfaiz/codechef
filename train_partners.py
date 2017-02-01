@@ -2,7 +2,8 @@ t = int(input())
 while(t):
 	x = int(input())
 	a = x%8
-	mn = str(x-3); pl = str(x+3)
+	pl = str(a+3)
+	mn = str(a-3)
 	if(a==1):
 		print(pl +'LB')
 	elif(a==2):
@@ -16,8 +17,8 @@ while(t):
 	elif(a==6):
 		print(mn+ 'UB')
 	elif(a==7):
-		print(str(x+1) + 'SU')
+		print(str(a+1) + 'SU')
 	else:
-		print(str(x-1) + 'MU')
+		print(str(7) + 'MU')
 
 	t = t-1;
